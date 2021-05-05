@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div style="font-size: large; padding: 10px;">Welcome to the home page of <i>Secret Message</i>.</div>
+
+	<div style="display: flex; flex-direction: row;
+				justify-content: space-around; width: 100%;">
+		<form action="{% url 'secMes:login' %}">
+		{% csrf_token %}
+			<div class="card text-center" style="width: 30rem; margin-top: 25vh;">
+	  			<div class="card-body" style="font-size: large; padding: 25px;">
+	    			<p class="card-text">To check messages you have recieved on <i>Secret Message</i>.</p>
+	    			<hr>
+	    			<input type="submit" name="Log In" value="Log In" class="bg-primary">
+	  			</div>
+			</div>
+		</form>
+
+		<form action="{% url 'secMes:signup' %}">
+		{% csrf_token %}
+			<div class="card text-center" style="width: 30rem; margin-top: 25vh;">
+	  			<div class="card-body" style="font-size: large; padding: 25px;">
+	    			<p class="card-text">To create your own <i>Secret Message</i> inbox.</p>
+	    			<hr>
+	    			<input type="submit" name="Sign Up" value="Sign Up" class="bg-primary">
+	  			</div>
+			</div>
+		</form>
+
+		<form action="{% url 'secMes:msgPage' %}">
+		{% csrf_token %}
+			<div class="card text-center" style="width: 30rem; margin-top: 25vh;">
+  				<div class="card-body" style="font-size: large; padding: 25px;">
+    				<p class="card-text">Send message to someone on <i>Secret Message</i>.</p>
+    				<hr>
+    			<input type="submit" name="Send" value="Send" class="bg-primary">
+  				</div>
+			</div>
+		</form>
+	</div>
+
+
+{% endblock %}
