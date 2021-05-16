@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<div class="message-body">
+		{% for mess in messages %}
+			<div class="card text-center message-container">
+		  		<div class="card-body">
+		    		<p class="card-text">{{ mess.msg }}</p>
+		  		</div>
+			</div>
+		{% endfor %}
+		<div style="display: flex; margin-top: 8vh; justify-content: center;">
+			<form action="{% url 'secMes:logout' %}" method="POST">
+			{% csrf_token %}
+				<input type="submit" name="logout" value="Log Out" class="bg-primary btn" 
+				style="margin-bottom: 4vh;">
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="ls-container">
+        <div class="ls-box">
+            <form action="{% url 'secMes:createAccount' %}" method="POST">
+                {% csrf_token %}
+                <div><i>Sign Up</i></div>
+                <hr>
+                <div class="form-group" style="display: flex; justify-content: space-between;">
+                    <label for="cname">Name</label>
+                    <input type="text" name="cname" required>
+                </div>
+                <div class="form-group" style="display: flex; justify-content: space-between;">
+                    <label for="cpswd">Password</label>
+                    <input type="password" name="cpswd" style="margin-left: 1vh;" required>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <input type="submit" name="Sign Up" value="Sign Up" class="bg-primary btn">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}   

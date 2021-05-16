@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="ls-container">
+        <div class="ls-box">
+            <form action="{% url 'secMes:outputMessage' %}" method="POST">
+                {% csrf_token %}
+                <div>
+                    <i>
+                        Log In
+                    </i>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <label for="lname">Username</label>
+                    <input type="text" name="lname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lpswd">Password</label>
+                    <input type="password" name="lpswd" style="margin-left: 1vh;" required>
+                </div>
+                <div style="display: flex; justify-content: center;">
+                    <input type="submit" name="Log In" value="Log In" class="bg-primary btn">
+                </div>
+                <div style="margin-top: 5vh; color: red;">{{ message }}</div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}   

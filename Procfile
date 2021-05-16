@@ -1,0 +1,1 @@
+web: gunicorn secretMessage.wsgi --log-file -

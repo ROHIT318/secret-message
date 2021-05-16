@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="img-container">
+		<img src="https://i.ibb.co/PQP8nCQ/cell-phone-690192-1920.jpg"
+		style="width: 100%;">
+		
+		<div class="home-header">
+			<p style="display: flex; justify-content: center; font-size: 30px;
+			border: 5px solid black;">
+				This is the home page for secret message.
+			</p>
+		</div>
+		
+		<div class="action-container">
+			<form action="{% url 'secMes:createAccount' %}" method="POST">
+			{% csrf_token %}
+				<label for="name">Enter your name: </label>
+				<input type="text" name="pname">
+				<label for="pswd">Enter your password: </label>
+				<input type="text" name="pswd">
+				<input type="submit" name="submit" value="Create your own">
+			</form>
+		</div>
+
+		<div class="action-container">
+			<form action="{% url 'secMes:outputMessage' %}" method="POST">
+			{% csrf_token %}
+				<label for="name">Enter your userid: </label>
+				<input type="text" name="lname">
+				<label for="pswd">Enter your password: </label>
+				<input type="text" name="lpswd">
+				<input type="submit" name="submit" value="Read your messages">
+			</form>
+		</div>
+
+		<div class="action-container">
+			<form action="{% url 'secMes:findUser' %}" method="POST">
+			{% csrf_token %}
+				<label for="uname">Enter your userid: </label>
+				<input type="text" name="uname">
+				<input type="submit" name="submit" value="Lets send him a message">
+			</form>
+		</div>
+	</div>
+
+
+{% endblock %}
