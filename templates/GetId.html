@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1">
+	<title>Secret Message | Get Id</title>
+
+	<style>
+		@media only screen 
+  		and (min-device-width: 320px) 
+  		and (max-device-width: 700px) {
+  			.card {
+  				width: calc(80%);
+  			}
+		}
+
+		@media only screen 
+  		and (min-device-width: 700px) {
+  			.card {
+  				width: calc(80%);
+  			}
+		}
+
+		@media screen 
+  		and (min-device-width: 1200px) 
+  		and (max-device-width: 1600px) 
+  		and (-webkit-min-device-pixel-ratio: 1) { 
+			.card {
+  				width: calc(60%);
+  			}
+		}
+	</style>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	
+	<script type="text/javascript">
+		function copy() {
+ 			var text = document.getElementById("link").value;
+ 			navigator.clipboard.writeText(text);
+		}
+
+		function loadText() {
+			document.getElementById("link").value += "{{ name }}";
+		}
+	</script>
+
+</head>
+<body style="background-image: linear-gradient(to right, violet, indigo); font-size: 3vh;" onload="loadText();">
+
+	<div class="card d-flex align-items-center bg-success text-white m-auto mt-5 p-5">
+		<div class="row-1">
+			Your username is <b style="color: Red">{{ name }}</b>. Please screenshot it and remember your password. Once lost we won't be able to do anything. Share link below with your friends to receive messages!
+		</div>
+
+		<div class="row-2 mt-3">
+			<input id="link" type="text" value="secretmess.herokuapp.com/sendToId/" disabled="disabled">
+			<button id="copy" class="form-control btn-info" onclick="copy();">
+				Copy to clipboard
+			</button>
+		</div>
+
+		<div class="row-2 mt-3">
+			<a href="{% url 'secMes:home' %}" class="btn btn-danger">Home</a>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

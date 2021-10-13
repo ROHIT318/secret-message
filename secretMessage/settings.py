@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+# SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = '47(tf4$7okfw)ci2h188*#!_szf16su3d-6uh!1j3e6@6)u8*f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,10 +80,15 @@ WSGI_APPLICATION = 'secretMessage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER'),
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': os.getenv('HOST'),
+        # 'NAME': os.getenv('NAME'),
+        # 'USER': os.getenv('USER'),
+        # 'PASSWORD': os.getenv('PASSWORD'),
+        # 'HOST': os.getenv('HOST'),
+    
+        'NAME': 'df10n8966gbu0r',
+        'USER': 'lzcqekfvbtlaxw',
+        'PASSWORD': '40f37fbdd44b05c82410c42f0977366871918335f79f41c65dfc58eb8a7face3',
+        'HOST': 'ec2-23-22-191-232.compute-1.amazonaws.com',
     }
 }
 
